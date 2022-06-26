@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+        </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                fontFamily: {
+        'myfont': ['Comfortaa'],
+      },
+            }
+          }
+        }
+      </script>
+    <title>Document</title>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+          .numberBtn{
+            @apply text-white bg-[#313131] btn-style;
+          }
+
+          .btn-style{
+           @apply rounded-full  h-16 w-16 text-lg font-bold hover:scale-105 active:scale-100 hover:opacity-75;
+          }
+
+          .topBtn{
+            @apply bg-[#A0A0A0] btn-style;
+          }
+
+          .funBtn-Style{
+            @apply  btn-style bg-[#F69906]  text-white;
+          }
+
+        }
+      </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-[#CBCBCB] font-myfont">
+ 
+    <div  class="bg-black h-[80%] p-4 rounded-3xl flex flex-col gap-8 pt-16">
+        <div class="dieplayResult  flex  flex-col gap-4 bg-black text-white">
+            <input topDisplay class="bg-black text-right text-xl opacity-75" type="text" value="419"  disabled>
+
+
+            <input bottomDisplay class="bg-black text-right text-3xl "type="text" value="0" disabled>
+        </div>
+        <div class="functionalButtons grid grid-cols-4 grid-rows-5 gap-4 text-center items-center">
+            <button clearBtn class="topBtn">AC</button>
+            <button backspaceBtn class="topBtn"></button>
+            <button functionBtn class="topBtn">%</button>
+            <button functionBtn class="funBtn-Style">÷</button>
+            <button number-button class="numberBtn">7</button>
+            <button number-button class="numberBtn">8</button>
+            <button number-button class="numberBtn">9</button>
+            <button functionBtn class="funBtn-Style">x</button>
+            <button number-button class="numberBtn">4</button>
+            <button number-button class="numberBtn">5</button>
+            <button number-button class="numberBtn">6</button>
+            <button functionBtn class="funBtn-Style">-</button>
+            <button number-button class="numberBtn">1</button>
+            <button number-button class="numberBtn">2</button>
+            <button number-button class="numberBtn">3</button>
+            <button functionBtn class="funBtn-Style">+</button>
+            <button number-button class="col-span-2 rounded-full  h-16 text-lg font-bold text-white bg-[#313131] text-left pl-6 hover:scale-105 active:scale-100 hover:opacity-75">0</button>
+            <button number-button class="numberBtn">.</button>
+            <button equals class="funBtn-Style ">=</button>
+        </div>
+    </div>
+    <script src="./calc.js"></script>
+
+</body>
+
+</html>
