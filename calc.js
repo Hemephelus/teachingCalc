@@ -8,6 +8,7 @@ const functionBtn = document.querySelectorAll('[functionBtn]')
 const bottomDisplay = document.querySelector('[bottomDisplay]')
 const topDisplay = document.querySelector('[topDisplay]')
 const clearBtn = document.querySelector('[clearBtn]')
+const backspaceBtn = document.querySelector('[backspaceBtn]')
 
 numberBtn.forEach(button =>{
    
@@ -24,6 +25,13 @@ function updateBottomDisplay(number){
 }
 
 clearBtn.onclick = clearAll
+backspaceBtn.onclick = backspace
+
+function backspace(){
+    if(bottomDisplay.value == '')return
+    bottomDisplay.value = bottomDisplay.value.slice(0, -1)
+
+}
 
 
 function clearAll(){
